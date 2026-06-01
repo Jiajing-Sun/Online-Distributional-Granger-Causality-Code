@@ -1,0 +1,39 @@
+# macOS / editor files
+.DS_Store
+.Rhistory
+.RData
+.Rproj.user/
+*.Rproj
+
+# Generated empirical outputs
+empirical_2025_pipeline/output*/
+empirical_2025_pipeline/cache/
+empirical_2025_pipeline/logs/
+
+# Generated simulation outputs
+simulation/output*/
+simulation/outputs/
+simulation/cache/
+simulation/logs/
+simulation/**/*.rds
+simulation/**/*.RData
+
+# Raw / proprietary data
+data/
+raw_data/
+*.rds
+*.RData
+*.csv.gz
+*.zip
+
+# Large result files
+*.feather
+*.parquet
+
+# LaTeX / plot scratch
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
