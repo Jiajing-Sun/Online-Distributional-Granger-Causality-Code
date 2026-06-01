@@ -7,7 +7,7 @@ The empirical BTC--Deribit application was built from:
 - Binance BTCUSDT hourly spot candles, which the code can fetch from Binance; and
 - BTC option transaction records from Deribit, accessed through the Blockchain Research Center data service.
 
-The Deribit data are third-party/proprietary and must be obtained separately. To run the empirical pipeline, provide the local Deribit data location through:
+The Deribit data are third-party/proprietary and must be obtained separately. To run the empirical code, provide the local Deribit data location through:
 
 ```bash
 --deribit_dir="/path/to/BTC Deribit Transactions"

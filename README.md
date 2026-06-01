@@ -4,7 +4,7 @@ This repository contains R code for the paper:
 
 > Jiajing Sun, Abderrahim Taamouti, and Yongmiao Hong, "Online Monitoring of Distributional Granger Causality".
 
-The repository is intended for coauthor review and replication of the numerical work. It contains code only. Raw Deribit option-transaction data and generated outputs are not included.
+The repository is intended for private replication and review of the numerical work. It contains code only; raw Deribit option-transaction data and generated outputs are not included.
 
 ## Repository Contents
 
@@ -16,7 +16,7 @@ simulation/
 
 empirical_2025_pipeline/
   R/                           Empirical panel, monitoring, and robustness functions
-  run_empirical_2025.R         Main empirical runner
+  run_empirical_2025.R         Main script for the BTC--Deribit application
   make_empirical_2025_latex_figures.R
                                Builds LaTeX tables and figures from empirical outputs
   glmy_raw_ingest_reference/   Minimal copied parser reference for raw Deribit/Binance ingestion
@@ -29,7 +29,7 @@ The empirical application uses:
 - hourly BTCUSDT spot candles from Binance, fetched by the code; and
 - BTC option transaction records from Deribit, accessed through the Blockchain Research Center data service.
 
-The Deribit transaction files are proprietary/third-party data and are not redistributed here. The empirical pipeline accepts either a local raw-data directory or explicit extra CSV file paths.
+The Deribit transaction files are proprietary third-party data and are not redistributed here. The empirical code can read either a local raw-data directory or explicit extra CSV file paths.
 
 Default empirical sample:
 
@@ -57,7 +57,7 @@ install.packages(c(
 
 `rstudioapi` is optional and is used only to infer script locations when running interactively in RStudio.
 
-## Empirical Pipeline
+## Empirical Code
 
 Run from the repository root:
 
@@ -90,8 +90,6 @@ The default output directory is:
 empirical_2025_pipeline/output_apr2025_mar2026_ncv20000/
 ```
 
-This directory is ignored by Git.
-
 For a lightweight check that does not require raw data, use synthetic smoke mode:
 
 ```bash
@@ -105,9 +103,9 @@ Rscript empirical_2025_pipeline/run_empirical_2025.R \
   --force=true
 ```
 
-## Simulation Pipeline
+## Simulation Code
 
-The simulation scripts are in `simulation/`. The main paper-level entry points are:
+The simulation scripts are in `simulation/`. The main entry points are:
 
 ```bash
 Rscript simulation/run_all_paper_sims.R
@@ -118,13 +116,11 @@ Rscript simulation/run_table4_gradual.R
 Rscript simulation/run_appendix_training_contam.R
 ```
 
-The more recent finite-sample redesign/screening runner is:
+The finite-sample critical-value assessment is run with:
 
 ```bash
 Rscript simulation/run_joe_redesign_sims.R
 ```
-
-Generated simulation output directories are ignored by Git.
 
 ## Reproducibility Notes
 
@@ -135,4 +131,4 @@ Generated simulation output directories are ignored by Git.
 
 ## License / Sharing
 
-This repository is currently for coauthor review and private replication. Please do not redistribute proprietary raw Deribit transaction data.
+This repository is currently for private replication and review. Please do not redistribute proprietary raw Deribit transaction data.

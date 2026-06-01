@@ -1,8 +1,8 @@
-# Empirical BTC--Deribit Pipeline Notes
+# Empirical BTC--Deribit Code Notes
 
-This directory rebuilds the BTC--Deribit empirical illustration reported in the manuscript. The default sample is April 1, 2025 through March 31, 2026, with the final predictor hour trimmed so the return outcome remains inside the sample.
+This directory contains the code for the BTC--Deribit empirical illustration reported in the manuscript. The default sample is April 1, 2025 through March 31, 2026, with the final predictor hour trimmed so the return outcome remains inside the sample.
 
-The intended Deribit input files are the raw CSV deliveries covering this sample. Depending on the local download layout, these can be supplied either through `--deribit_dir=<folder>` or explicitly through `--extra_deribit_files=<comma-separated files>`. The pipeline discovers files named `YYYYMMDD-YYYYMMDD.csv` that overlap the requested sample window.
+The intended Deribit input files are the raw CSV deliveries covering this sample. Depending on the local download layout, these can be supplied either through `--deribit_dir=<folder>` or explicitly through `--extra_deribit_files=<comma-separated files>`. The code discovers files named `YYYYMMDD-YYYYMMDD.csv` that overlap the requested sample window.
 
 If `--deribit_dir` is omitted, the code reads the `DERIBIT_DIR` environment variable and otherwise falls back to `data/raw_deribit`.
 
